@@ -212,20 +212,20 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #232d4b;
+  color: #57aaba;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #435791;
+  color: #9fcfd8;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #0b0e17; }
+  background: #397e8b; }
 
 /*********************************************
  * IMAGES
@@ -247,23 +247,68 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #232d4b;
+  border-color: #57aaba;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #232d4b; }
+  color: #57aaba; }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #232d4b; }
+  color: #57aaba; }
 
 .reveal .progress span {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+.orange-txt {
+  color: #e57200; }
+
+.two-col {
+  column-count: 2;
+  column-gap: 5vw; }
+
+.reveal a.separated {
+  display: block;
+  margin-top: 2vw;
+  text-decoration: underline; }
+
+.reveal .slides section.xl {
+  width: 140%;
+  margin-left: -20%; }
+
+.boxed {
+  border: 4px dotted #e57200 !important;
+  padding: 40px !important; }
+
+.reveal h5 {
+  font-size: 28px;
+  color: #57aaba; }
+
+ul.file-structure {
+  font-size: 18px;
+  font-family: monospace;
+  list-style: none;
+  text-align: left;
+  background-color: #3f3f3f;
+  padding: 20px 40px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+  ul.file-structure ul {
+    list-style: none; }
+    ul.file-structure ul ul {
+      list-style: none; }
+
+.reveal pre {
+  box-shadow: none; }
+  .reveal pre code {
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+
+.flex {
+  display: flex; }

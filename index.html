@@ -25,14 +25,199 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h2>What is SASS</h2>
-					<p>CSS is fun again!</p>
+					<h2>What is SASS?</h2>
+					<p>An extension language for CSS</p>
+					<p>It's rich feature set allows developers to <span class="orange-txt">efficiently write elegant, well-structured</span> stylesheets.</p>
 				</section>
 				<section>
-					<iframe height='642' scrolling='no' title='Gravity Points' src='//codepen.io/akm2/embed/rHIsa/?height=642&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/akm2/pen/rHIsa/'>Gravity Points</a> by Akimitsu Hamamuro (<a href='https://codepen.io/akm2'>@akm2</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+					<h2>Features</h2>
+					<ul class="two-col">
+						<li>Variables</li>
+						<li>Nesting</li>
+						<li>Partials</li>
+						<li>Operators</li>
+						<li>Extends</li>
+						<li>Mixins</li>
+					</ul>
+					<a class="separated" href="https://sass-lang.com/documentation" target="_blank">sass-lang.com/documentation</a>
 				</section>
-			</div>
+				<section>
+					<h2>So, Why Use Sass?</h2>
+				</section>
+				<section class="xl">
+					<h4>Example 1: Pure CSS</h4>
+					<p data-height="500" data-theme-id="0" data-slug-hash="rvqWWg" data-default-tab="css,result" data-user="mcopper1226" data-embed-version="2" data-pen-title="CSS Demonstration" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/mcopper1226/pen/rvqWWg/">CSS Demonstration</a> by Megan Copper (<a href="https://codepen.io/mcopper1226">@mcopper1226</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+				</section>
+				<section class="xl">
+					<h4>Example 2: SCSS</h4>
+					<p data-height="500" data-theme-id="0" data-slug-hash="jxeMeY" data-default-tab="css,result" data-user="mcopper1226" data-embed-version="2" data-pen-title="Sass Demonstration" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/mcopper1226/pen/jxeMeY/">Sass Demonstration</a> by Megan Copper (<a href="https://codepen.io/mcopper1226">@mcopper1226</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+				</section>
+				<section>
+					<h2>So, Why Use Sass?</h2>
+					<h5 class="orange-txt"><em>Do more, write less - 120 lines of code versus 380</em></h5>
+				<div class="boxed">
+					<ol class="numbered">
+					<li>Efficient - no redundancy!</li>
+					<li>Well-structured - allows you to organize code into logical groups</li>
+					<li>Flexible - make changes in one place</li>
+				</ol>
+				</div>
+				</section>
+				<section>
+					<h2>Getting Started</h2>
+					<p>Browsers don't understand SASS, so it must be processed into CSS</p>
+					<p>There are a variety of tools for compiling .scss files - build tools like Gulp/Grunt, Sass Gem, Node-Sass</p>
+				</section>
+				<section>
+					<section><h2>Features</h2></section>
+					<section>
+						<h3>Feature 1: Variables</h3>
+						<p>A storage container for a CSS value (color, font, numeric value, etc.) that can be used throughout code</p>
+						<pre>
+							<code data-trim data-noescape>
+								$magenta: #d33682;
+								$cyan: #35c9be;
+								$font_lg: 24px;
+								$primary_font: 'Roboto', sans-serif;
+
+								$base_color: $magenta;
+								$text_color: $cyan;
+
+								h3 {
+									color: $cyan;
+									background-color: $base_color;
+									font-size: $font-lg;
+									font-family: $primary_font;
+								}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Feature 2: Nesting</h3>
+						<p>Reduces repetition and allows you to keep everything together</p>
+						<pre>
+							<code data-trim data-noescape>
+								.image-grid {
+									width: 80%;
+									padding: 1rem;
+									img {
+										display: block;
+										width: 25%;
+										height: auto;
+									}
+									.text-wrapper {
+										margin: 1rem 0;
+										h2 {
+											color: green;
+											&:hover {
+												color: orange;
+											}
+										}
+										&:after {
+											content: 'Hi!';
+										}
+									}
+								}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Feature 3: Partials</h3>
+						<p>Modularize your code and keep everything in functional groups; all partials are compiled into one file so there is only one server call</p>
+						<div class="flex">
+							<ul class="file-structure">
+								<li><b>css</b>
+								<ul>
+								<li>main.css</li>
+								</ul>
+								</li>
+								<li><b>sass</b>
+								<ul>
+								<li>main.scss</li>
+								</ul>
+								<ul>
+								<li><b>base</b>
+								<ul>
+								<li>_variables.scss</li>
+								<li>_mixins.scss</li>
+								<li>_reset.scss</li>
+								</ul>
+								</li>
+								</ul>
+								<ul>
+								<li><b>components</b>
+								<ul>
+								<li>_typography.scss</li>
+								<li>_grid.scss</li>
+								<li>_buttons.scss</li>
+								<li>_navigation.scss</li>
+								<li>_sections.scss</li>
+								</ul>
+								</li>
+								</ul>
+							</ul>
+							<pre style="width: 50%;">
+								<code data-trim data-noescape>
+								//In main.scss
+
+								@import typography;
+								</code>
+							</pre>
+						</div>
+					</section>
+					<section>
+						<h3>Feature 4: Operators</h3>
+						<p>Use math operations - addition, division, multiplication - to create more flexible styles</p>
+						<pre>
+							<code data-trim data-noescape>
+								$border_width: 1px;
+								$border_width_thicker: $border_width * 5;
+
+								.big-button {
+									border: $border_width_thicker solid blue;
+								}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Feature 5: Extends</h3>
+						<p>Base a CSS rule on another rule</p>
+						<pre>
+							<code data-trim data-noescape>
+								.button {
+									height: 40px;
+									line-height: 40px;
+									border-radius: 3px;
+								}
+								.button-solid {
+									@extend .button;
+									background: green;
+									color: yellow;
+								}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Feature 6: Mixins</h3>
+						<p>A groups of CSS declarations that can be reused throughout the site</p>
+						<pre>
+							<code data-trim data-noescape>
+						@mixin backImage($image, $position: center, $size: cover) {
+						    background-position: $position;
+						    background-size: $size;
+						    background-repeat: no-repeat;
+						    background-image: url($image);
+						}
+
+						.home-hero {
+							@include backImage('http://unsplash.com/image-1.jpg', center, cover);
+						}
+							</code>
+						</pre>
+					</section>
+				</section>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
