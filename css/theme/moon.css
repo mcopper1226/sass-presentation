@@ -288,6 +288,9 @@ body {
   border: 4px dotted #e57200 !important;
   padding: 40px !important; }
 
+.flex .boxed {
+  flex: 1; }
+
 .reveal h5 {
   font-size: 28px;
   color: #57aaba; }

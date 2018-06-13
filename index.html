@@ -26,55 +26,82 @@
 			<div class="slides">
 				<section>
 					<h2>What is React?</h2>
-					<p>An extension language for CSS</p>
-					<p>It's rich feature set allows developers to <span class="orange-txt">efficiently write elegant, well-structured</span> stylesheets.</p>
+					<p>A declarative, efficient, and flexible JavaScript <span class="orange-txt">library</span> for building complex (or simple) UIs</p>
+					<p>Open-source and extremely well-supported by a huge community of developers</p>
 				</section>
 				<section>
-					<h2>Features</h2>
-					<ul class="two-col">
-						<li>Variables</li>
-						<li>Nesting</li>
-						<li>Partials</li>
-						<li>Operators</li>
-						<li>Extends</li>
-						<li>Mixins</li>
+					<h4>Perhaps you've seen it?</h4>
+					<img src="/lib/logoSpread.svg"/>
+				</section>
+				<section>
+					<h2>Why Use React?</h2>
+					<ul>
+						<li class="fragment fade-up">Easy to debug and maintain</li>
+						<li class="fragment fade-up">Fast and performant</li>
+						<li class="fragment fade-up">Reusable and composable</li>
+						<li class="fragment fade-up">Because it's awesome!</li>
 					</ul>
-					<a class="separated" href="https://sass-lang.com/documentation" target="_blank">sass-lang.com/documentation</a>
 				</section>
-				<section>
-					<h2>So, Why Use Sass?</h2>
-				</section>
+
 				<section class="xl">
-					<h4>Example 1: Pure CSS</h4>
+					<h4>React in Action</h4>
 					<p data-height="500" data-theme-id="0" data-slug-hash="rvqWWg" data-default-tab="css,result" data-user="mcopper1226" data-embed-version="2" data-pen-title="CSS Demonstration" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/mcopper1226/pen/rvqWWg/">CSS Demonstration</a> by Megan Copper (<a href="https://codepen.io/mcopper1226">@mcopper1226</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 				</section>
-				<section class="xl">
-					<h4>Example 2: SCSS</h4>
-					<p data-height="500" data-theme-id="0" data-slug-hash="jxeMeY" data-default-tab="css,result" data-user="mcopper1226" data-embed-version="2" data-pen-title="Sass Demonstration" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/mcopper1226/pen/jxeMeY/">Sass Demonstration</a> by Megan Copper (<a href="https://codepen.io/mcopper1226">@mcopper1226</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-				</section>
 				<section>
-					<h2>So, Why Use Sass?</h2>
-					<h5 class="orange-txt"><em>Do more, write less - 120 lines of code versus 380</em></h5>
-				<div class="boxed">
-					<ol class="numbered">
-					<li>Efficient - no redundancy!</li>
-					<li>Well-structured - allows you to organize code into logical groups</li>
-					<li>Flexible - make changes in one place</li>
-				</ol>
-				</div>
-				</section>
-				<section>
-					<h2>Getting Started</h2>
-					<p>Browsers don't understand SASS, so it must be processed into CSS</p>
-					<p>There are a variety of tools for compiling .scss files - build tools like Gulp/Grunt, Sass Gem, Node-Sass</p>
-				</section>
-				<section>
-					<section><h2>Features</h2></section>
 					<section>
-						<h3>Feature 1: Variables</h3>
-						<p>A storage container for a CSS value (color, font, numeric value, etc.) that can be used throughout code</p>
+						<h2>The React Paradigm</h2>
+						<img style="background: transparent; border: none; box-shadow: none" src="/lib/paradigm.svg"/>
+					</section>
+					<section>
+						<h3>Composable</h3>
+						<p>Build encapsulated components that manage their own state, then compose them together to make complex UIs</p>
+					</section>
+					<section>
+						<h3>Declarative</h3>
+						<p>You design (declare) views for each state in your application and React will handle the DOM manipulation for you; no need to manage <em>how</em> and <em>when</em> DOM manipulation should take place</p>
+					</section>
+					<section>
+						<h3>Virtual DOM</h3>
+						<p>React creates a JavaScript copy of the actual DOM and all computations are performed here; when changes are detected on the virtual copy, ONLY what has changed is updated in the HTML DOM</p>
+					</section>
+					<section>
+						<h3>One-Way Data Flow</h3>
+						<p>Application data flows one-way via the state and props objects; in a multicomponent hierarchy, a common parent component should manage state and pass it down</p>
+					</section>
+				</section>
+				<section>
+					<h2>The Ecosystem</h2>
+					<div class="flex">
+						<div class="boxed" style="margin-right: 10px; text-align: left;">
+							<h4>Build Tools</h4>
+							<ul>
+								<li>JSX</li>
+								<li>Webpack</li>
+								<li>Babel</li>
+								<li>ESLint</li>
+								<li>Jest</li>
+
+							</ul>
+						</div>
+						<div class="boxed" style="margin-left: 10px; text-align: left;">
+							<h4>Libraries</h4>
+							<ul>
+								<li>React Router</li>
+								<li>Redux/MobX</li>
+								<li>SASS Modules</li>
+								<li>Helmet</li>
+								<li>Many, many others</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section>
+					<section><h2>Core Concepts</h2></section>
+					<section>
+						<h3>Elements</h3>
+						<p>The smallest building block; they describe what you want to see on the screen and are immutable</p>
 						<pre>
 							<code data-trim data-noescape>
 								$magenta: #d33682;
@@ -95,8 +122,8 @@
 						</pre>
 					</section>
 					<section>
-						<h3>Feature 2: Nesting</h3>
-						<p>Reduces repetition and allows you to keep everything together</p>
+						<h3>Components</h3>
+						<p>A collection of HTML, CSS, JS, and internal data specific to that component; each should be independent and focused on doing one specific thing</p>
 						<pre>
 							<code data-trim data-noescape>
 								.image-grid {
@@ -124,62 +151,22 @@
 						</pre>
 					</section>
 					<section>
-						<h3>Feature 3: Partials</h3>
-						<p>Modularize your code and keep everything in functional groups; all partials are compiled into one file so there is only one server call</p>
-						<div class="flex">
-							<ul class="file-structure">
-								<li><b>css</b>
-								<ul>
-								<li>main.css</li>
-								</ul>
-								</li>
-								<li><b>sass</b>
-								<ul>
-								<li>main.scss</li>
-								</ul>
-								<ul>
-								<li><b>base</b>
-								<ul>
-								<li>_variables.scss</li>
-								<li>_mixins.scss</li>
-								<li>_reset.scss</li>
-								</ul>
-								</li>
-								</ul>
-								<ul>
-								<li><b>components</b>
-								<ul>
-								<li>_typography.scss</li>
-								<li>_grid.scss</li>
-								<li>_buttons.scss</li>
-								<li>_navigation.scss</li>
-								<li>_sections.scss</li>
-								</ul>
-								</li>
-								</ul>
-							</ul>
-							<pre style="width: 50%;">
-								<code data-trim data-noescape>
-								//In main.scss
-
-								@import typography;
-								</code>
-							</pre>
-						</div>
+						<h3>Props</h3>
+						<p>Immutable parameters passed into a component from a parent component</p>
 					</section>
 					<section>
-						<h3>Feature 4: Operators</h3>
-						<p>Use math operations - addition, division, multiplication - to create more flexible styles</p>
-						<pre>
-							<code data-trim data-noescape>
-								$border_width: 1px;
-								$border_width_thicker: $border_width * 5;
+						<h3>State</h3>
+						<p>The internal data store (object) of a component; if data is going to change, we have to use state (not props)</p>
+					</section>
+					<section>
+						<h3>Lifecycle Methods</h3>
+						<p>These allow us to excute certain actions at particular times during the lifecycle of a compoent (mount, update, unmount)</p>
+					
+					</section>
+					<section>
+						<h3>Universal (Server-Side) Rendering</h3>
+						<p>Generate static markup on the server, which is ready to be rendered in the browser, as-is; this is important for speed and SEO</p>
 
-								.big-button {
-									border: $border_width_thicker solid blue;
-								}
-							</code>
-						</pre>
 					</section>
 					<section>
 						<h3>Feature 5: Extends</h3>
