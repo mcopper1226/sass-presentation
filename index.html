@@ -31,7 +31,7 @@
 				</section>
 				<section>
 					<h4>Perhaps you've seen it?</h4>
-					<img src="/lib/logoSpread.svg"/>
+					<img src="lib/logoSpread.svg"/>
 				</section>
 				<section>
 					<h2>Why Use React?</h2>
@@ -45,17 +45,25 @@
 
 				<section class="xl">
 					<h4>React in Action</h4>
-					<p data-height="500" data-theme-id="0" data-slug-hash="rvqWWg" data-default-tab="css,result" data-user="mcopper1226" data-embed-version="2" data-pen-title="CSS Demonstration" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/mcopper1226/pen/rvqWWg/">CSS Demonstration</a> by Megan Copper (<a href="https://codepen.io/mcopper1226">@mcopper1226</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					<iframe height='600' scrolling='no' title='React Demo - Message App' src='//codepen.io/mcopper1226/embed/preview/GGvMMa/?height=265&theme-id=0&default-tab=css,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mcopper1226/pen/GGvMMa/'>React Demo - Message App</a> by Megan Copper (<a href='https://codepen.io/mcopper1226'>@mcopper1226</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				</section>
+				<section class="xl">
+					<iframe height='600' scrolling='no' title='React + Axios + NY Times API' src='//codepen.io/mcopper1226/embed/preview/gKRKeb/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mcopper1226/pen/gKRKeb/'>React + Axios + NY Times API</a> by Megan Copper (<a href='https://codepen.io/mcopper1226'>@mcopper1226</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 				</section>
 				<section>
 					<section>
 						<h2>The React Paradigm</h2>
-						<img style="background: transparent; border: none; box-shadow: none" src="/lib/paradigm.svg"/>
+						<img style="background: transparent; border: none; box-shadow: none" src="lib/paradigm.svg"/>
 					</section>
 					<section>
 						<h3>Composable</h3>
 						<p>Build encapsulated components that manage their own state, then compose them together to make complex UIs</p>
+					</section>
+					<section>
+						<iframe height='600' scrolling='no' title='GOT Card Sample' src='//codepen.io/mcopper1226/embed/preview/MXvvGW/?height=265&theme-id=0&default-tab=css,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mcopper1226/pen/MXvvGW/'>GOT Card Sample</a> by Megan Copper (<a href='https://codepen.io/mcopper1226'>@mcopper1226</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 					</section>
 					<section>
 						<h3>Declarative</h3>
@@ -64,6 +72,20 @@
 					<section>
 						<h3>Virtual DOM</h3>
 						<p>React creates a JavaScript copy of the actual DOM and all computations are performed here; when changes are detected on the virtual copy, ONLY what has changed is updated in the HTML DOM</p>
+					</section>
+					<section>
+						<h3>Virtual DOM Example</h3>
+						<h4 class="orange">Hipster Object</h4>
+						<div class="flex">
+							<div class="hipster-box">
+								<p>State: Is Outside</p>
+								<img src="lib/hipster-1-01.png"/>
+							</div>
+							<div class="hipster-box">
+								<p>State: Is Not Outside</p>
+								<img src="lib/hipster-2-01.png"/>
+							</div>
+						</div>
 					</section>
 					<section>
 						<h3>One-Way Data Flow</h3>
@@ -101,54 +123,37 @@
 					<section><h2>Core Concepts</h2></section>
 					<section>
 						<h3>Elements</h3>
-						<p>The smallest building block; they describe what you want to see on the screen and are immutable</p>
+						<p>The smallest building block; plain old JavaScript objects that are used to describe how the HTML for the component should look.</p>
+
 						<pre>
-							<code data-trim data-noescape>
-								$magenta: #d33682;
-								$cyan: #35c9be;
-								$font_lg: 24px;
-								$primary_font: 'Roboto', sans-serif;
+							<code data-trim>
+							//JSX sytnax:
+							var helloWorld = <div>Hello World!</div>;
 
-								$base_color: $magenta;
-								$text_color: $cyan;
+							// And this is what the JSX syntax compiles into in JavaScript:
+							var helloWorld = React.createElement(
+								 "div",
+								  null,
+								  "Hello World!"
+							);
 
-								h3 {
-									color: $cyan;
-									background-color: $base_color;
-									font-size: $font-lg;
-									font-family: $primary_font;
-								}
+							// And this produces a plain old JavaScript object that looks something like this:
+							var helloWorld = {
+								  key: null,
+								  props: {
+								    children: "Hello World!" // more stuff in here
+								  },
+								  ref: null,
+								  type: "div"
+							};
+
 							</code>
 						</pre>
 					</section>
 					<section>
 						<h3>Components</h3>
-						<p>A collection of HTML, CSS, JS, and internal data specific to that component; each should be independent and focused on doing one specific thing</p>
-						<pre>
-							<code data-trim data-noescape>
-								.image-grid {
-									width: 80%;
-									padding: 1rem;
-									img {
-										display: block;
-										width: 25%;
-										height: auto;
-									}
-									.text-wrapper {
-										margin: 1rem 0;
-										h2 {
-											color: green;
-											&:hover {
-												color: orange;
-											}
-										}
-										&:after {
-											content: 'Hi!';
-										}
-									}
-								}
-							</code>
-						</pre>
+						<p>A collection of HTML, CSS, JS, and internal data specific to that "function"; each should be independent and focused on doing one specific thing.</p>
+						<a href="#/example">Example</a>
 					</section>
 					<section>
 						<h3>Props</h3>
@@ -161,49 +166,18 @@
 					<section>
 						<h3>Lifecycle Methods</h3>
 						<p>These allow us to excute certain actions at particular times during the lifecycle of a compoent (mount, update, unmount)</p>
-					
+
 					</section>
 					<section>
 						<h3>Universal (Server-Side) Rendering</h3>
 						<p>Generate static markup on the server, which is ready to be rendered in the browser, as-is; this is important for speed and SEO</p>
 
 					</section>
-					<section>
-						<h3>Feature 5: Extends</h3>
-						<p>Base a CSS rule on another rule</p>
-						<pre>
-							<code data-trim data-noescape>
-								.button {
-									height: 40px;
-									line-height: 40px;
-									border-radius: 3px;
-								}
-								.button-solid {
-									@extend .button;
-									background: green;
-									color: yellow;
-								}
-							</code>
-						</pre>
-					</section>
-					<section>
-						<h3>Feature 6: Mixins</h3>
-						<p>A groups of CSS declarations that can be reused throughout the site</p>
-						<pre>
-							<code data-trim data-noescape>
-						@mixin backImage($image, $position: center, $size: cover) {
-						    background-position: $position;
-						    background-size: $size;
-						    background-repeat: no-repeat;
-						    background-image: url($image);
-						}
 
-						.home-hero {
-							@include backImage('http://unsplash.com/image-1.jpg', center, cover);
-						}
-							</code>
-						</pre>
-					</section>
+				</section>
+				<section id="example">
+					<iframe height='600' scrolling='no' title='React Demo' src='//codepen.io/mcopper1226/embed/preview/PajQYv/?height=265&theme-id=0&default-tab=css,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mcopper1226/pen/PajQYv/'>React Demo</a> by Megan Copper (<a href='https://codepen.io/mcopper1226'>@mcopper1226</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 				</section>
 		</div>
 

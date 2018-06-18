@@ -92,7 +92,7 @@ $selectionBackgroundColor: $barely;
 }
 
 .flex .boxed {
-	flex: 1; 
+	flex: 1;
 }
 
 .reveal h5 {
@@ -125,4 +125,18 @@ ul.file-structure {
 
 .flex {
 	display: flex;
+}
+
+.reveal section .hipster-box {
+	background: rgba(255, 255, 255, 0.3);
+	padding: 20px;
+	border: 5px solid white;
+	flex: 1;
+	margin: 0 10px; 
+	img {
+		max-height: 35vh;
+		background: transparent;
+		box-shadow: none;
+		border: none;
+	}
 }
